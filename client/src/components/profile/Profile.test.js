@@ -74,8 +74,14 @@ describe('<Profile/>', () => {
     );
   });
 
-  it('renders correctly', () => {
+  it('renders notMyProfileProps correctly', () => {
     const { container } = render(<Profile {...notMyProfileProps} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders myProfileProps correctly', () => {
+    const { container } = render(<Profile {...myProfileProps} />);
 
     expect(container).toMatchSnapshot();
   });
